@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link type="text/css" rel="stylesheet" href="css/stylesheet.css" />
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+		<!-- <script type="text/javascript" src="js/script.js"></script> -->
+		<meta charset="utf-8">
+		<title>ACMElogs</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse justify-content-center" role="navigation">
+			<h1 class="brand navbar-brand">ACME logs</h1>
+		</nav>
+
+		<!-- Input JSON File -->
+		<div class="input-group mb-3" style="margin: 20px auto;">
+			<div class="custom-file">
+			  	<input type="file" class="custom-file-input" id="file-input">
+			  	<label class="custom-file-label" for="inputGroupFile01">Choose JSON file then Submit</label>
+			</div>
+			<div class="input-group-prepend">
+				<!-- <span class="input-group-text">Upload</span> -->
+				<button class="btn btn-outline-primary input-group-text" type="button" id="read-button" onclick="dataforAction('Logon-Success');">Submit</button>
+			</div>
+		</div>
+
+		<!-- User Data -->
+		<table class="tables" id="userAttempts">
+			<thead>
+				<tr>
+					<th colspan="3" style="border-bottom: 1px solid black;">
+						<button id="buttonSuccess" class="btn btn-primary userDataTable successButton active" onclick="dataforAction('Logon-Success');">Logon-Success</button>
+						<button id="buttonFailure" class="btn btn-primary userDataTable failureButton" onclick="dataforAction('Logon-Failure');">Logon-Failure</button>
+						<button id="buttonUnknown" class="btn btn-primary userDataTable unknownButton" onclick="dataforAction('Other');">Unknown Attempts</button>
+					</th>
+				</tr>
+				<tr>
+					<th style="padding: 12px 70px;">UserName</th>
+					<th>Successful Attempts</th>
+				</tr>
+			</thead>
+			<tbody id='userData'>
+			</tbody>
+		</table>
+
+		<!-- Action Data -->
+		<table class="tables" id="logontable">
+			<thead>
+				<tr>
+					<th>Total Logon-Successes</th>
+					<th>Total Logon-Failures</th>
+					<th>Unknown Logon Attempts</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="success"></td>
+					<td id="failure"></td>
+					<td id="unknown"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Target Data -->
+		<div id="barchart"></div>
+
+        <!-- page content -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
